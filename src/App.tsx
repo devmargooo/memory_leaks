@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import {Alert} from "./components/Alert/Alert";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [color, setColor] = useState("red");
+    useEffect(() => {
+        setTimeout(() => {
+            setColor("yellow");
+            setTimeout(() => {
+                setColor("green");
+            }, 2700);
+        }, 1200);
+    }, []);
+    return (
+        <div className="App">
+            <Alert text="Hello world" color={color}/>
+        </div>
+    );
 }
 
 export default App;
