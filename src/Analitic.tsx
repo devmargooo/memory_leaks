@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Alert} from "./components/Alert/Alert";
 
-function App() {
+function Analitic() {
     const [color, setColor] = useState("red");
     useEffect(() => {
         setTimeout(() => {
@@ -19,4 +19,4 @@ function App() {
     );
 }
 
-export default App;
+export default Analitic;
